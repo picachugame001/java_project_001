@@ -1,0 +1,12 @@
+#git.txt
+
+setRemote:
+	git remote add main01 https://github.com/picachugame001/java_project_001.git
+	
+
+setEmail:
+	git config --global user.email "picachusays@gmail.com"
+setName:
+	git config --global user.name "VinhNT_Picachu"
+create:
+	git init 
