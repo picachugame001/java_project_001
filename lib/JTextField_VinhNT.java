@@ -129,79 +129,54 @@ public class JTextField_VinhNT
 					if(str.equals("0")
 						&& offset == 0
 						&& is_My_Set_Val == false 
-					)
+					) 
 					{
 						return;
 					}
 				}
 				else{
 				//Nếu nó là số nguyên có dấu
-					char[] str01 = getText().toCharArray();
-					//nếu đang là chuỗi rỗng
-					if(str01.length == 0){
-						if(str.equals("0") && is_My_Set_Val == false){
+					String str00 = getText();
+					char[] str01 = str00.toCharArray();
+					String str02 = new String("");
+					if(offset > 0){
+						str02 = getText().substring(0,offset);
+					}
+					//xet trường hợp khi nhập số 0
+					if(str.equals("0")){
+						if(offset == 0 &&  is_My_Set_Val == false){
 							return;
 						}
-						char[] test01 = str.toCharArray();
-						for(int i = 0 ; i < test01.length; i++){
-							if(!Character.isDigit(test01[i])){
-								if(test01[i] == '-' && i == 0){
-									//OK
-								}
-								else{
-									return;
-								}
-								
-							}
-							
+						//offset > 0
+						//xyz<<0
+						if(str02.equals("-")){
+							return;
 						}
-						
 					}
-					else{
-					//nếu đang có chuỗi
-						if(str.equals("0") && is_My_Set_Val == false){
-							if(offset == 0){
-								return;
-							}
-							else if(offset == 1){
+					if(str.equals("-")){
+						if(offset == 0){
+							if(str01.length > 0){
 								if(str01[0] == '-'){
 									return;
 								}
-								if(str01[0] == '0'){
-									return;
-								}
-							}
-							
-						}
-						if(str.equals("-")){
-							if(offset == 0){
-								if(str01[0] == '-'){
-									return;
-								}
-								if(str01[0] == '0'){
-									return;
-								}
-							}
-							else if(offset > 0 ){
-								return;
 							}
 						}
-						char[] test01 = str.toCharArray();
-						for(int i = 0 ; i < test01.length; i++) {
-							if(!Character.isDigit(test01[i])){
-								if(test01[i] == '-' && i == 0){
-									//check roi
-								}
-								else{
-									return;
-								}
-								
-							}
-							
+						else{
+							//offset > 0
+							return;
 						}
-					}	
-					
+					}
+					char[] test01 = str.toCharArray();
+					for(int i = 0 ; i < test01.length; i++){
+						if(!Character.isDigit(test01[i])){
+							if(test01[i] == '-'){
+								continue;
+							}
+							return;
+						}
+					}
 				}
+				
 			}
 			
 			super.insertString(offset, str, attr);
