@@ -15,38 +15,36 @@ public class JTextField_VinhNT
 	implements ActionListener,FocusListener
 {
 	private boolean is_My_Set_Val;
+	protected void control_set_val(){
+		is_My_Set_Val = !(is_My_Set_Val);
+	}
 	public JTextField_VinhNT(){
 		super();
 		setColumns(10);
 		addActionListener(this);
 		addFocusListener(this);
-		is_My_Set_Val = true;
+		control_set_val();
 		if(is_Integer_Only()){
 			setText("0");
 			setHorizontalAlignment(JTextField.RIGHT);
-			setCaretPosition(getText().length());
 		}
-		is_My_Set_Val = false;
+		control_set_val();
 	}
 	public void actionPerformed(ActionEvent e){
 	}
 	public void focusGained(FocusEvent e){
-		is_My_Set_Val = true;
+		control_set_val();
 		if(is_Integer_Only()){
 			setCaretPosition(getText().length());
 			if(getText().equals("0")){
 				setText("");
 			}
 		}
-		is_My_Set_Val = false;
-		
+		control_set_val();
 	}
 	public void focusLost(FocusEvent e){
-		is_My_Set_Val = true;
+		control_set_val();
 		setText(getText().trim());
-		if(is_Integer_Only()){
-			
-		}
 		if(
 			is_Integer_Only()
 		&&	(	getText().equals("")
@@ -55,8 +53,8 @@ public class JTextField_VinhNT
 		)
 		{
 			setText("0");
-			is_My_Set_Val = false;
 		}
+		control_set_val();
 	}
     //phương thức này sẻ được thừa kế
     public int get_Max_Length(){
@@ -70,11 +68,11 @@ public class JTextField_VinhNT
 	}
 	
 	public boolean is_Integer_Only(){
-		return true;
+		return false;
 	}
 	
 	public boolean is_Signed_Value(){
-		return true;
+		return false;
 	}
 	
 	protected Document createDefaultModel(){
@@ -174,13 +172,13 @@ public class JTextField_VinhNT
 							}
 							return;
 						}
+						if(offset == 0 && str01.length > 0 && str01[0] == '-'){
+							return;
+						}
 					}
 				}
-				
 			}
-			
 			super.insertString(offset, str, attr);
-			
 		}
 	}
 

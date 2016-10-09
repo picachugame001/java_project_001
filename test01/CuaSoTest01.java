@@ -10,6 +10,7 @@ import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 import test01.testarea01.Textfield01;
 import test01.testarea01.Textfield0102;
+import lib.JNumberField_UInt_VinhNT;
 
 
 public class CuaSoTest01 extends JFrame_VinhNT{
@@ -20,6 +21,7 @@ public class CuaSoTest01 extends JFrame_VinhNT{
 	
     private Button01 button01;
 	private JTextField_VinhNT testTextFiel;
+	private JNumberField_UInt_VinhNT textint;
 	//
 	private Textfield01<Textfield0102> textarea01;
 	//
@@ -33,6 +35,7 @@ public class CuaSoTest01 extends JFrame_VinhNT{
 		testLB = new JLabel("dòng test nè bà con:");
 		testTextFiel = new JTextField_VinhNT();
 		textarea01 = new Textfield01<Textfield0102>(Textfield0102.class);
+		textint = new JNumberField_UInt_VinhNT();
 		//
 		//textarea01.setText("sjdfhdsf s\nsldjfhsldf");
 		
@@ -47,6 +50,7 @@ public class CuaSoTest01 extends JFrame_VinhNT{
 		center.add(testTextFiel);
         center.add(button01);
 		center.add(textarea01);
+		center.add(textint);
         
 		buildLayout();
 		return center;
@@ -103,7 +107,16 @@ public class CuaSoTest01 extends JFrame_VinhNT{
 		( SpringLayout.SOUTH, center
 		, 50
 		, SpringLayout.SOUTH, textarea01);
-     
+		
+		layout01.putConstraint
+		( SpringLayout.WEST, textint
+		, lib.CuaSo.khoang_Cach_Common
+		, SpringLayout.WEST, center);
+		
+		layout01.putConstraint
+		( SpringLayout.NORTH, textint
+		, lib.CuaSo.khoang_Cach_Common
+		, SpringLayout.SOUTH, textarea01);
 		
 	}
 }

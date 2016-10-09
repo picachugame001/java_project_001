@@ -10,3 +10,4 @@ setName:
 	git config --global user.name "VinhNT_Picachu"
 create:
 	git init 
+	
