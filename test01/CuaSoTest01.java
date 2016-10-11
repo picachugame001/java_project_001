@@ -11,6 +11,7 @@ import javax.swing.ScrollPaneConstants;
 import test01.testarea01.Textfield01;
 import test01.testarea01.Textfield0102;
 import lib.JNumberField_UInt_VinhNT;
+import lib.JNumberField_Int_VinhNT;
 
 
 public class CuaSoTest01 extends JFrame_VinhNT{
@@ -21,7 +22,7 @@ public class CuaSoTest01 extends JFrame_VinhNT{
 	
     private Button01 button01;
 	private JTextField_VinhNT testTextFiel;
-	private JNumberField_UInt_VinhNT textint;
+	private JNumberField_Int_VinhNT textint;
 	//
 	private Textfield01<Textfield0102> textarea01;
 	//
@@ -35,7 +36,7 @@ public class CuaSoTest01 extends JFrame_VinhNT{
 		testLB = new JLabel("dòng test nè bà con:");
 		testTextFiel = new JTextField_VinhNT();
 		textarea01 = new Textfield01<Textfield0102>(Textfield0102.class);
-		textint = new JNumberField_UInt_VinhNT();
+		textint = new JNumberField_Int_VinhNT();
 		//
 		//textarea01.setText("sjdfhdsf s\nsldjfhsldf");
 		

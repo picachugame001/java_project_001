@@ -15,11 +15,13 @@ public class JTextField_VinhNT
 	implements ActionListener,FocusListener
 {
 	private boolean is_My_Set_Val;
+	private JTextField text99;
 	protected void control_set_val(){
 		is_My_Set_Val = !(is_My_Set_Val);
 	}
 	public JTextField_VinhNT(){
 		super();
+		text99 = this;
 		setColumns(10);
 		addActionListener(this);
 		addFocusListener(this);
@@ -45,6 +47,12 @@ public class JTextField_VinhNT
 	public void focusLost(FocusEvent e){
 		control_set_val();
 		setText(getText().trim());
+		if(is_Integer_Only()){
+			String temp01 = getText();
+			String temp02 = temp01.replaceAll("^0+","");
+			temp01 = temp02.replaceAll("^-0+","-");
+			setText(temp01);
+		}
 		if(
 			is_Integer_Only()
 		&&	(	getText().equals("")
@@ -54,6 +62,7 @@ public class JTextField_VinhNT
 		{
 			setText("0");
 		}
+		
 		control_set_val();
 	}
     //phương thức này sẻ được thừa kế
@@ -134,11 +143,11 @@ public class JTextField_VinhNT
 				}
 				else{
 				//Nếu nó là số nguyên có dấu
-					String str00 = getText();
+					String str00 = text99.getText();
 					char[] str01 = str00.toCharArray();
 					String str02 = new String("");
 					if(offset > 0){
-						str02 = getText().substring(0,offset);
+						str02 = text99.getText().substring(0,offset);
 					}
 					//xet trường hợp khi nhập số 0
 					if(str.equals("0")){
