@@ -50,7 +50,7 @@ public class JFrame_VinhNT extends JFrame{
 	public int get_Min_Height(){
 		return 300;
 	}
-	private int get_Min_Width(){
+	public int get_Min_Width(){
 		return 400;
 	}
 	public boolean get_is_resize(){

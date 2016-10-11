@@ -12,6 +12,7 @@ import test01.testarea01.Textfield01;
 import test01.testarea01.Textfield0102;
 import lib.JNumberField_UInt_VinhNT;
 import lib.JNumberField_Int_VinhNT;
+import test02.Button_Test02_Run;
 
 
 public class CuaSoTest01 extends JFrame_VinhNT{
@@ -23,6 +24,7 @@ public class CuaSoTest01 extends JFrame_VinhNT{
     private Button01 button01;
 	private JTextField_VinhNT testTextFiel;
 	private JNumberField_Int_VinhNT textint;
+	private Button_Test02_Run test02_button;
 	//
 	private Textfield01<Textfield0102> textarea01;
 	//
@@ -37,6 +39,7 @@ public class CuaSoTest01 extends JFrame_VinhNT{
 		testTextFiel = new JTextField_VinhNT();
 		textarea01 = new Textfield01<Textfield0102>(Textfield0102.class);
 		textint = new JNumberField_Int_VinhNT();
+		test02_button = new Button_Test02_Run();
 		//
 		//textarea01.setText("sjdfhdsf s\nsldjfhsldf");
 		
@@ -52,6 +55,7 @@ public class CuaSoTest01 extends JFrame_VinhNT{
         center.add(button01);
 		center.add(textarea01);
 		center.add(textint);
+		center.add(test02_button); 
         
 		buildLayout();
 		return center;
@@ -118,6 +122,16 @@ public class CuaSoTest01 extends JFrame_VinhNT{
 		( SpringLayout.NORTH, textint
 		, lib.CuaSo.khoang_Cach_Common
 		, SpringLayout.SOUTH, textarea01);
+		
+		layout01.putConstraint
+		( SpringLayout.NORTH, test02_button
+		, lib.CuaSo.khoang_Cach_Common
+		, SpringLayout.SOUTH, textint);
+		
+		layout01.putConstraint
+		( SpringLayout.WEST, test02_button
+		, lib.CuaSo.khoang_Cach_Common
+		, SpringLayout.WEST, center);
 		
 	}
 }
