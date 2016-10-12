@@ -47,10 +47,10 @@ public class JFrame_VinhNT extends JFrame{
 	public static void khoi_Tao_CuaSo(){
 		JFrame.setDefaultLookAndFeelDecorated(true);
 	}
-	public int get_Min_Height(){
+	protected int get_Min_Height(){
 		return 300;
 	}
-	public int get_Min_Width(){
+	protected int get_Min_Width(){
 		return 400;
 	}
 	public boolean get_is_resize(){
