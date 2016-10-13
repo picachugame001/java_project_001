@@ -10,8 +10,10 @@ import javax.swing.SpringLayout;
  * that spans two lines.
  */
 public class JFrame_VinhNT extends JFrame{
+	private JPanel main_Panel;
+	private SpringLayout main_Layout;
     public JFrame_VinhNT(){
-
+		
         super();
 		khoi_Tao_CuaSo();
 		setLocationByPlatform(true);
@@ -22,13 +24,19 @@ public class JFrame_VinhNT extends JFrame{
 		Container main_Container = getContentPane();
 		main_Container.add(get_Page_Start(),BorderLayout.PAGE_START);
 		main_Container.add(get_Line_Start(),BorderLayout.LINE_START);
-		main_Container.add(get_Center()    ,BorderLayout.CENTER);
+		//
+		main_Panel = new JPanel();
+		main_Layout = new SpringLayout();
+		main_Panel.setLayout(main_Layout);
+		//
+		main_Container.add(main_Panel      ,BorderLayout.CENTER);
 		main_Container.add(get_Line_End()  ,BorderLayout.LINE_END);
 		main_Container.add(get_Page_End()  ,BorderLayout.PAGE_END);
 		pack();
         show01();
 
     }
+	
     public void show01(){
         javax.swing.SwingUtilities.invokeLater(
             new Runnable(){
