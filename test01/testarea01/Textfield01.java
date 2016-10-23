@@ -7,3 +7,5 @@ extends JTextArea_VinhNT<Textfield0102>{
 		super(a);
 	}
 }
+
+//C:\Program Files (x86)\Macromedia\Flash 8\Samples and Tutorials\Tutorial Assets\Basic Tasks\FlashBanner\

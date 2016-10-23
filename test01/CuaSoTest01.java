@@ -32,9 +32,9 @@ public class CuaSoTest01 extends JFrame_VinhNT{
         return "Cửa sổ test 01";
     }
 	//@override
-	public JPanel get_Center(){
-		center = super.get_Center();
-		layout01 = (SpringLayout)center.getLayout();
+	public void build_Layout(){
+		center = get_Main_Panel();
+		layout01 = get_Main_Layout();
 		testLB = new JLabel("dòng test nè bà con:");
 		testTextFiel = new JTextField_VinhNT();
 		textarea01 = new Textfield01<Textfield0102>(Textfield0102.class);
@@ -58,7 +58,6 @@ public class CuaSoTest01 extends JFrame_VinhNT{
 		center.add(test02_button); 
         
 		buildLayout();
-		return center;
 	}
 	private void buildLayout(){
 		//testTextFiel.setSize(200,lib.CuaSo.khoang_Cach_Common0);

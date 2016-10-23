@@ -8,7 +8,7 @@ import test02.area01.Test02_Input0102;
 
 public class JFrame_Test02 extends JFrame_VinhNT{
 	private Button_Test02_Run button_act;
-	private Test02_Input01<Test02_Input0102> input001;
+	private Test02_Input01 input001;
 	public JFrame_Test02(Button_Test02_Run c1){
 		super();
 		button_act = c1;
@@ -28,10 +28,12 @@ public class JFrame_Test02 extends JFrame_VinhNT{
 		super.dispose();
 		button_act.setCloseWin();
 	}
-	public JPanel get_Center(){
-		JPanel center = super.get_Center();
-		SpringLayout layout01 = (SpringLayout)center.getLayout();
-		input001 = new Test02_Input01<Test02_Input0102>
+	public void build_Layout(){
+		JPanel center = get_Main_Panel();
+		SpringLayout layout01 = get_Main_Layout();
+		
+		
+		input001 = new Test02_Input01
 		(Test02_Input0102.class);
 		
 		center.add(input001);
@@ -51,7 +53,6 @@ public class JFrame_Test02 extends JFrame_VinhNT{
 		,	center
 		);
 		
-		return center;
 	}
 	
 }
