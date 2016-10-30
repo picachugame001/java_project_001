@@ -18,7 +18,6 @@ public abstract class JFrame_VinhNT extends JFrame{
     public JFrame_VinhNT(){
 		
         super();
-		khoi_Tao_CuaSo();
 		setLocationByPlatform(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		init_CuaSo();
@@ -49,9 +48,6 @@ public abstract class JFrame_VinhNT extends JFrame{
                 }
             }
         );
-    }
-    public void test(){
-        System.out.print("ka ka");
     }
     public String getTitle02(){
         return "default";

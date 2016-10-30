@@ -9,3 +9,4 @@ extends JTextArea_VinhNT<Test02_Input0102>
 	}
 }
 
+

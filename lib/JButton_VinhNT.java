@@ -2,7 +2,7 @@ package lib;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-public class JButton_VinhNT extends JButton implements ActionListener {
+public abstract class JButton_VinhNT extends JButton implements ActionListener {
     public JButton_VinhNT(){
         addActionListener(this);
         setText("button");
@@ -13,8 +13,6 @@ public class JButton_VinhNT extends JButton implements ActionListener {
     }
     
     //function will override
-    public void on_Click(){
-        return;
-    }
+    public abstract void on_Click();
     
 }
