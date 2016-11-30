@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.FocusEvent;
+import java.awt.Dimension;
 
 public class JTextField_VinhNT
 	extends JTextField
@@ -22,7 +23,12 @@ public class JTextField_VinhNT
 	public JTextField_VinhNT(){
 		super();
 		text99 = this;
-		setColumns(10);
+		setPreferredSize(
+			new Dimension(
+				get_width_01()
+			,	get_height_01()
+			)
+		);
 		addActionListener(this);
 		addFocusListener(this);
 		control_set_val();
@@ -67,7 +73,7 @@ public class JTextField_VinhNT
 	}
     //phương thức này sẻ được thừa kế
     public int get_Max_Length(){
-        return 10;
+        return 20;
     }
 	// 1 upper case
 	// 0 nomal
@@ -189,6 +195,12 @@ public class JTextField_VinhNT
 			}
 			super.insertString(offset, str, attr);
 		}
+	}
+	protected int get_width_01(){
+		return 100;
+	}
+	protected int get_height_01(){
+		return 20;
 	}
 
 }

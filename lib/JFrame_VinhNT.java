@@ -36,7 +36,7 @@ public abstract class JFrame_VinhNT extends JFrame{
 		main_Container.add(main_Panel      ,BorderLayout.CENTER);
 		main_Container.add(get_Line_End()  ,BorderLayout.LINE_END);
 		main_Container.add(get_Page_End()  ,BorderLayout.PAGE_END);
-		pack();
+		//pack();
         show01();
 
     }
