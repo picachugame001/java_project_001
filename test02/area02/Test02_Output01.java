@@ -1,11 +1,10 @@
-package test02.area01;
+package test02.area02;
 import lib.text_area.JTextArea_VinhNT;
-import lib.text_area.JTextArea02_VinhNT;
 import java.awt.Dimension;
-public class Test02_Input01
-extends JTextArea_VinhNT<Test02_Input0102>
+public class Test02_Output01
+extends JTextArea_VinhNT<Test02_Output0102>
 {
-	public Test02_Input01(Class<Test02_Input0102> a001){
+	public Test02_Output01(Class<Test02_Output0102> a001){
 		super(a001);
 		int	width01 = test02.JFrame_Test02.block * 22;
 		int height01 = test02.JFrame_Test02.block * 9;
@@ -13,5 +12,4 @@ extends JTextArea_VinhNT<Test02_Input0102>
 		setPreferredSize(size1);
 	}
 }
-
 
