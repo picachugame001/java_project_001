@@ -1,12 +1,12 @@
 
 
-JAVA_PATH = C:\\Program Files\\Java\\jdk1.7.0_80\\bin\\
-SOURCE_PATH = D:\\Workspaces\\Java\\Test01\\
-CLASS_PATH = $(SOURCE_PATH)bin\\
+#JAVA_PATH = C:\\Program Files\\Java\\jdk1.7.0_80\\bin\\
+#SOURCE_PATH = D:\\Workspaces\\Java\\Test01\\
+#CLASS_PATH = $(SOURCE_PATH)bin\\
 
-#JAVA_PATH = /usr/lib/jvm/default-java/bin/
-#SOURCE_PATH = /media/picachu/AACD4A0B2C53D4EA/Workspaces/Java/Test01/
-#CLASS_PATH = $(SOURCE_PATH)bin/
+JAVA_PATH = /usr/lib/jvm/default-java/bin/
+SOURCE_PATH = /home/picachu/Documents/Wordspaces/java/Test01/
+CLASS_PATH = $(SOURCE_PATH)bin/
 
 .PHONY : run
 run: build
