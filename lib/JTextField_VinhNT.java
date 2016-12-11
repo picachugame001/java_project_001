@@ -52,23 +52,21 @@ public class JTextField_VinhNT
 	}
 	public void focusLost(FocusEvent e){
 		control_set_val();
-		setText(getText().trim());
+		String temp01 = getText().trim();
 		if(is_Integer_Only()){
-			String temp01 = getText();
 			String temp02 = temp01.replaceAll("^0+","");
 			temp01 = temp02.replaceAll("^-0+","-");
-			setText(temp01);
 		}
 		if(
 			is_Integer_Only()
-		&&	(	getText().equals("")
-			||	getText().equals("-")
+		&&	(	temp01.equals("")
+			||	temp01.equals("-")
 			)
 		)
 		{
-			setText("0");
+			temp01 = new String("0");
 		}
-		
+		setText(temp01);
 		control_set_val();
 	}
     //phương thức này sẻ được thừa kế
