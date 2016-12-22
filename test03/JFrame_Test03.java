@@ -3,6 +3,7 @@ import lib.Sub_JFrame_VinhNT;
 import lib.Sub_JButton_VinhNT;
 import javax.swing.SpringLayout;
 import javax.swing.JPanel;
+import lib.table.*;
 
 public class JFrame_Test03 extends Sub_JFrame_VinhNT{
     private Show_Image_Test03 image;
@@ -12,6 +13,7 @@ public class JFrame_Test03 extends Sub_JFrame_VinhNT{
     private Radio03 radio03;
     private Output01_Test03 out01;
     private Run_Test03 run01;
+    private JTable_VinhNT table01;
     public JFrame_Test03(Sub_JButton_VinhNT button_start01){
         super(button_start01);
     }
@@ -34,6 +36,8 @@ public class JFrame_Test03 extends Sub_JFrame_VinhNT{
         group.add(radio03);
 
         group.set_Value(radio);
+
+        table01 = new JTable_VinhNT(JTable_VinhNT02.class);
         
         
 
@@ -46,6 +50,8 @@ public class JFrame_Test03 extends Sub_JFrame_VinhNT{
         main.add(radio03);
         main.add(out01);
         main.add(run01);
+        main.add(table01);
+
         //
         layout.putConstraint(
             SpringLayout.NORTH
@@ -129,6 +135,20 @@ public class JFrame_Test03 extends Sub_JFrame_VinhNT{
         layout.putConstraint(
             SpringLayout.WEST
         ,   run01
+        ,   10
+        ,   SpringLayout.WEST
+        ,   main
+        );
+        layout.putConstraint(
+            SpringLayout.NORTH
+        ,   table01
+        ,   10
+        ,   SpringLayout.SOUTH 
+        ,   run01
+        );
+        layout.putConstraint(
+            SpringLayout.WEST
+        ,   table01
         ,   10
         ,   SpringLayout.WEST
         ,   main

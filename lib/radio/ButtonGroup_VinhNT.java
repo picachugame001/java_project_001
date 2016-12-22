@@ -8,16 +8,14 @@ extends ButtonGroup
     public ButtonGroup_VinhNT(){
         super();
     }
-    @SuppressWarnings({"unchecked"})
-    public void set_Select(JRadioButton_VinhNT a){
-            select01 = (E)a;
+    public void set_Select(E a){
+            select01 = a;
     }
     public E get_Select(){
         return select01;
     }
-    @SuppressWarnings({"unchecked"})
-    public void set_Value(JRadioButton_VinhNT a){
+    public void set_Value(E a){
         setSelected(a.getModel(),true);
-        select01 = (E)a;
+        select01 = a;
     }
 }
