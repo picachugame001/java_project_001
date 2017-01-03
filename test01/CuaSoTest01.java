@@ -5,6 +5,8 @@ import lib.JFrame_VinhNT;
 import test02.Button_Test02_Run;
 import test03.JButton_Test03;
 import test03.JFrame_Test03;
+import test04.Button_Run_Test04;
+import test04.JFrame_Test04;
 //
 public class CuaSoTest01 extends JFrame_VinhNT{
     private SpringLayout layout01;
@@ -13,6 +15,7 @@ public class CuaSoTest01 extends JFrame_VinhNT{
     //
     private Button_Test02_Run test02_button;
     private JButton_Test03 test03_button;
+    private Button_Run_Test04 test04_button;
     //
     public String getTitle02(){
         return "Cửa sổ test 01";
@@ -23,9 +26,11 @@ public class CuaSoTest01 extends JFrame_VinhNT{
         layout01 = get_Main_Layout();
         test02_button = new Button_Test02_Run();
         test03_button = new JButton_Test03(JFrame_Test03.class);
+        test04_button = new Button_Run_Test04(JFrame_Test04.class);
         //
         center.add(test02_button);
         center.add(test03_button);
+        center.add(test04_button);
         //
         buildLayout();
     }
@@ -46,6 +51,15 @@ public class CuaSoTest01 extends JFrame_VinhNT{
         , SpringLayout.SOUTH, test02_button);
         layout01.putConstraint
         ( SpringLayout.WEST, test03_button
+        , JFrame_VinhNT.khoang_Cach_Common
+        , SpringLayout.WEST, center);
+        //
+        layout01.putConstraint
+        ( SpringLayout.NORTH, test04_button
+        , JFrame_VinhNT.khoang_Cach_Common
+        , SpringLayout.SOUTH, test03_button);
+        layout01.putConstraint
+        ( SpringLayout.WEST, test04_button
         , JFrame_VinhNT.khoang_Cach_Common
         , SpringLayout.WEST, center);
     }

@@ -27,6 +27,9 @@ public class JTextArea_VinhNT<E extends JTextArea02_VinhNT> extends JScrollPane{
             System.out.print("SecurityException");
         } 
         setViewportView(textField);
+        Dimension size1 = new Dimension(get_Width(),get_Height());
+        setPreferredSize(size1);
+        
     }
     public void setText(String t){
         textField.setText(t);
@@ -36,5 +39,11 @@ public class JTextArea_VinhNT<E extends JTextArea02_VinhNT> extends JScrollPane{
     }
     public void init_TextField(){
         
+    }
+    public int get_Width(){
+        return 100;
+    }
+    public int get_Height(){
+        return 100;
     }
 }

@@ -1,5 +1,6 @@
 package lib.table;
 import javax.swing.JScrollPane;
+import java.awt.Dimension;
 
 public class JTable_VinhNT<E extends JTable_VinhNT02> extends JScrollPane{
     private E table02;
@@ -20,10 +21,19 @@ public class JTable_VinhNT<E extends JTable_VinhNT02> extends JScrollPane{
             System.out.print("SecurityException");
         } 
         setViewportView(table02);
-
+        table02.setFillsViewportHeight(true);
+        Dimension size1 = new Dimension(get_Width(),get_Height());
+        setPreferredSize(size1);
 
 
     }
-    
-    
+    public int get_Width(){
+        return test02.JFrame_Test02.block * 22;
+    }
+    public int get_Height(){
+        return test02.JFrame_Test02.block * 9;
+    }
+    public E get_Table(){
+        return table02;
+    }
 }

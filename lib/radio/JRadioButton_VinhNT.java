@@ -15,7 +15,7 @@ implements  ActionListener
         main02 = main01;
         addActionListener(this);
     }
-    
+    @SuppressWarnings({"unchecked", "varargs"})
     public void actionPerformed(ActionEvent e){
         
         main02.set_Select(this); 
