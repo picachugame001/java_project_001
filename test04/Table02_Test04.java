@@ -6,5 +6,6 @@ extends JTable_VinhNT02<Data01_T4,ColumnModel01_T4>
 {
     public Table02_Test04(Data01_T4 p1, ColumnModel01_T4 p2){
         super(p1,p2);
+        setAutoResizeMode(AUTO_RESIZE_OFF);
     }
 }

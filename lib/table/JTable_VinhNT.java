@@ -50,6 +50,10 @@ extends JScrollPane
         tableColumnModel10.newRow();
         tableColumnModel10.newRow();
         tableColumnModel10.newRow();
+        tableColumnModel10.newRow();
+        tableColumnModel10.newRow();
+        tableColumnModel10.newRow();
+        tableColumnModel10.newRow();
 
 
     }

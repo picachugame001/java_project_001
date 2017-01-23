@@ -18,7 +18,6 @@ extends DefaultTableColumnModel
     }
     public void newRow(){
         int max = getColumnCount();
-        System.out.print(model01.getColumnCount());
         Object[] arrayValue = new Object[max];
         for(int i=0;i<max;i++){
             arrayValue[i] = ((TableColumn_VinhNT)getColumn(i)).getDefaultValue();

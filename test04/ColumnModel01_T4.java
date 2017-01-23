@@ -13,8 +13,10 @@ extends TableColumnModel_VinhNT<Data01_T4>
         Edit04_T4 a8 = new Edit04_T4(a6);
         Column01_T4 a4 = new Column01_T4(a2,a3);
         Column02_T4 a5 = new Column02_T4(a7,a8);
+        Column03_T4 a9 = new Column03_T4(2,a7,a8);
         addColumn(a4);
         addColumn(a5);
+        addColumn(a9);
         
     }
 }
