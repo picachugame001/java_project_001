@@ -58,10 +58,10 @@ extends JScrollPane
 
     }
     public int get_Width(){
-        return test02.JFrame_Test02.block * 22;
+        return test02.JFrame_Test02.block * 40;
     }
     public int get_Height(){
-        return test02.JFrame_Test02.block * 9;
+        return test02.JFrame_Test02.block * 20;
     }
     public E get_Table(){
         return table02;

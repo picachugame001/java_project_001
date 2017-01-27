@@ -10,4 +10,14 @@ extends DefaultCellEditor
     public TableCellEditor_String_VinhNT(E textField) {
         super(textField);
     }
+    @Override
+    public Object getCellEditorValue(){
+        Object a = super.getCellEditorValue();
+        if(a instanceof String){
+            String b = ((String)a).trim();
+            return b;
+        }
+        return a;  
+    }
+
 }
