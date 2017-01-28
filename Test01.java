@@ -12,6 +12,5 @@ class Test01{
     public static void main(String[] args){
 		JFrame_VinhNT.khoi_Tao_CuaSo();
         CuaSoTest01 a = new CuaSoTest01();
-        System.out.print("xin chao cua so");
     } 
 }
