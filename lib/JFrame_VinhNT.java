@@ -53,10 +53,7 @@ public abstract class JFrame_VinhNT extends JFrame{
             }
         );
     }
-<<<<<<< HEAD
-=======
     
->>>>>>> 9c4777ec5d967aaf8bf0defa9822ab7c5d4457cd
     public String getTitle02(){
         return "default";
     }

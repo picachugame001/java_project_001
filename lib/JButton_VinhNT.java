@@ -2,7 +2,7 @@ package lib;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-public abstract class JButton_VinhNT extends JButton implements ActionListener {
+public class JButton_VinhNT extends JButton implements ActionListener {
     public JButton_VinhNT(){
         addActionListener(this);
         setText("button");
@@ -11,6 +11,6 @@ public abstract class JButton_VinhNT extends JButton implements ActionListener {
         on_Click();
     }
     //function will override
-    public abstract void on_Click();
+    public  void on_Click(){}
     
 }
