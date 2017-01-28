@@ -5,13 +5,13 @@ import java.awt.Dimension;
 public class Test02_Input01
 extends JTextArea_VinhNT<Test02_Input0102>
 {
-	public Test02_Input01(Class<Test02_Input0102> a001){
-		super(a001);
-		int	width01 = test02.JFrame_Test02.block * 22;
-		int height01 = test02.JFrame_Test02.block * 9;
-		Dimension size1 = new Dimension(width01,height01);
-		setPreferredSize(size1);
-	}
+    public Test02_Input01(Class<Test02_Input0102> a001){
+        super(a001);
+    }
+    public int get_Width(){
+        return test02.JFrame_Test02.block * 22;
+    }
+    public int get_Height(){
+        return test02.JFrame_Test02.block * 9;
+    }
 }
-
-

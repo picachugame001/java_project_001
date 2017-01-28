@@ -1,20 +1,21 @@
 
 
-JAVA_PATH = C:\\Program Files\\Java\\jdk1.7.0_80\\bin\\
-SOURCE_PATH = D:\\Workspaces\\Java\\Test01\\
-CLASS_PATH = $(SOURCE_PATH)bin\\
+#JAVA_PATH = C:\\Program Files\\Java\\jdk1.7.0_80\\bin\\
+#SOURCE_PATH = D:\\Workspaces\\Java\\Test01\\
+#CLASS_PATH = $(SOURCE_PATH)bin\\
 
-#JAVA_PATH = /usr/lib/jvm/default-java/bin/
-#SOURCE_PATH = /media/picachu/AACD4A0B2C53D4EA/Workspaces/Java/Test01/
-#CLASS_PATH = $(SOURCE_PATH)bin/
+JAVA_PATH = /usr/lib/jvm/default-java/bin/
+SOURCE_PATH = /home/picachu/Documents/Wordspaces/java/Test01/
+CLASS_PATH = $(SOURCE_PATH)bin/
+.DEFAULT_GOAL = run
 
 .PHONY : run
 run: build
-	$(JAVA_PATH)java -cp $(CLASS_PATH)  test01.Test02
+	$(JAVA_PATH)java -cp $(CLASS_PATH)  Test01
 
 .PHONY :  build
 build: 
-	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  test01/Test02.java -encoding utf-8
+	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  Test01.java -encoding utf-8 -Xlint:unchecked
 
 .PHONY : test
 test:
@@ -33,7 +34,8 @@ doc:
 # tao jar file
 .PHONY : jar
 jar:
-	jar cvfm first_jar.jar manifes.txt bin/test01/Test02.class bin/test01/ bin/lib/
+	$(JAVA_PATH)jar cvfm first_jar.jar manifes.txt test01 lib test02 test03 test04 Test01.class
 .PHONY : jarrun
 jarrun:	
-	java -jar first_jar.jar
+	$(JAVA_PATH)java -jar first_jar.jar
+

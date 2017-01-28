@@ -7,11 +7,9 @@ public abstract class JButton_VinhNT extends JButton implements ActionListener {
         addActionListener(this);
         setText("button");
     }
-    
     public void actionPerformed(ActionEvent e){
         on_Click();
     }
-    
     //function will override
     public abstract void on_Click();
     
