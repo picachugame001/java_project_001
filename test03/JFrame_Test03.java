@@ -4,6 +4,7 @@ import lib.Sub_JButton_VinhNT;
 import javax.swing.SpringLayout;
 import javax.swing.JPanel;
 import lib.table.*;
+import lib.table.column.column_string.*;
 import javax.swing.table.DefaultTableModel;
 
 public class JFrame_Test03 extends Sub_JFrame_VinhNT{
@@ -13,6 +14,8 @@ public class JFrame_Test03 extends Sub_JFrame_VinhNT{
     private Radio03 radio03;
     private Output01_Test03 out01;
     private Run_Test03 run01;
+    private Button_Test_Path testp_bu;
+    private Text_Test_Path testp_te;
     
     public JFrame_Test03(Sub_JButton_VinhNT button_start01){
         super(button_start01);
@@ -30,6 +33,8 @@ public class JFrame_Test03 extends Sub_JFrame_VinhNT{
         radio03 = new Radio03(group,3);
         out01 = new Output01_Test03();
         run01 = new Run_Test03(group,out01);
+        testp_te = new Text_Test_Path();
+        testp_bu = new Button_Test_Path(testp_te);
         
         group.add(radio);
         group.add(radio02);
@@ -45,7 +50,9 @@ public class JFrame_Test03 extends Sub_JFrame_VinhNT{
         main.add(radio02);
         main.add(radio03);
         main.add(out01);
-        main.add(run01);  
+        main.add(run01);
+        main.add(testp_bu);
+        main.add(testp_te);
         //
         
         //
@@ -118,6 +125,34 @@ public class JFrame_Test03 extends Sub_JFrame_VinhNT{
         layout.putConstraint(
             SpringLayout.WEST
         ,   run01
+        ,   10
+        ,   SpringLayout.WEST
+        ,   main
+        );
+        layout.putConstraint(
+            SpringLayout.NORTH
+        ,   testp_bu
+        ,   10
+        ,   SpringLayout.SOUTH 
+        ,   run01
+        );
+        layout.putConstraint(
+            SpringLayout.WEST
+        ,   testp_bu
+        ,   10
+        ,   SpringLayout.WEST
+        ,   main
+        );
+        layout.putConstraint(
+            SpringLayout.NORTH
+        ,   testp_te
+        ,   10
+        ,   SpringLayout.SOUTH 
+        ,   testp_bu
+        );
+        layout.putConstraint(
+            SpringLayout.WEST
+        ,   testp_te
         ,   10
         ,   SpringLayout.WEST
         ,   main
