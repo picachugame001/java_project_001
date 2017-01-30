@@ -1,6 +1,7 @@
 package test03;
 import lib.JButton_VinhNT;
 import lib.file.File_VinhNT;
+import java.io.IOException;
 
 public class Button_Test_Path
 extends JButton_VinhNT
@@ -12,9 +13,20 @@ extends JButton_VinhNT
         out = out1;
     }
     public void on_Click(){
-        out.setText("");
+        //out.setText("");
         File_VinhNT temp = new File_VinhNT();
-        out.setText(temp.separator);
+        ClassLoader loader = Button_Test_Path.class.getClassLoader();
+        //out.setText(temp.separator);
+        //try{
+            out.setText(loader.getResource("test03/Button_Test_Path.class")
+            .getPath());
+        //out.setText("abcd0123");
+        //}
+        //catch(IOException e){
+        //    System.out.println("IOException");
+        //}
+        
+
         
     }
 }
