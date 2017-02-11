@@ -5,7 +5,7 @@
 #CLASS_PATH = $(SOURCE_PATH)bin\\
 
 JAVA_PATH = /usr/lib/jvm/default-java/bin/
-SOURCE_PATH = /home/picachu/Documents/Wordspaces/java/Test01/
+SOURCE_PATH = /home/picachu/Documents/Workspace/Test01/
 CLASS_PATH = $(SOURCE_PATH)bin/
 .DEFAULT_GOAL = run
 
