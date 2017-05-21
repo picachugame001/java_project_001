@@ -11,11 +11,11 @@ CLASS_PATH = $(SOURCE_PATH)bin/
 
 .PHONY : run
 run: build
-	$(JAVA_PATH)java -cp $(CLASS_PATH)  Test01
+	$(JAVA_PATH)java -cp ./bin  Test01
 
 .PHONY :  build
 build: 
-	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  Test01.java -encoding utf-8 -Xlint:unchecked
+	$(JAVA_PATH)javac -d ./bin -cp .  Test01.java -encoding utf-8 -Xlint:unchecked
 
 .PHONY : test
 test:
