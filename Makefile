@@ -34,7 +34,7 @@ doc:
 # tao jar file
 .PHONY : jar
 jar:
-	$(JAVA_PATH)jar cvfm first_jar.jar manifes.txt test01 lib test02 test03 test04 main
+	$(JAVA_PATH)jar  cvfm first_jar.jar manifes.txt -C bin/ .
 .PHONY : jarrun
 jarrun:	
 	$(JAVA_PATH)java -jar first_jar.jar
