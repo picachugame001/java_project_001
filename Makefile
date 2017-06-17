@@ -11,11 +11,11 @@ CLASS_PATH = $(SOURCE_PATH)bin/
 
 .PHONY : run
 run: build
-	$(JAVA_PATH)java -cp ./bin  Test01
+	$(JAVA_PATH)java -cp ./bin  main.Test01
 
 .PHONY :  build
 build: 
-	$(JAVA_PATH)javac -d ./bin -cp .  Test01.java -encoding utf-8 -Xlint:unchecked
+	$(JAVA_PATH)javac -d ./bin -cp .  main/Test01.java -encoding utf-8 -Xlint:unchecked
 
 .PHONY : test
 test:
@@ -34,7 +34,7 @@ doc:
 # tao jar file
 .PHONY : jar
 jar:
-	$(JAVA_PATH)jar cvfm first_jar.jar manifes.txt test01 lib test02 test03 test04 Test01.class
+	$(JAVA_PATH)jar cvfm first_jar.jar manifes.txt test01 lib test02 test03 test04 main
 .PHONY : jarrun
 jarrun:	
 	$(JAVA_PATH)java -jar first_jar.jar
