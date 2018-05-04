@@ -1,16 +1,16 @@
 
 
-#JAVA_PATH = C:\\Program Files\\Java\\jdk1.7.0_80\\bin\\
-#SOURCE_PATH = D:\\Workspaces\\Java\\Test01\\
-#CLASS_PATH = $(SOURCE_PATH)bin\\
+JAVA_PATH = C:\\Program Files\\Java\\jdk1.7.0_80\\bin\\
+SOURCE_PATH = D:\\Workspaces\\Java\\Test01\\
+CLASS_PATH = $(SOURCE_PATH)bin\\
 
-JAVA_PATH = /usr/lib/jvm/default-java/bin/
-SOURCE_PATH = /home/picachu/Documents/Wordspaces/java/Test01/
-CLASS_PATH = $(SOURCE_PATH)bin/
-.DEFAULT_GOAL = run
+#JAVA_PATH = /usr/lib/jvm/default-java/bin/
+#SOURCE_PATH = /home/picachu/Documents/Wordspaces/java/Test01/
+#CLASS_PATH = $(SOURCE_PATH)bin/
+.DEFAULT_GOAL = build_02
 
 .PHONY : run
-run: build
+run: 
 	$(JAVA_PATH)java -cp $(CLASS_PATH)  Test01
 
 .PHONY :  build
@@ -38,4 +38,16 @@ jar:
 .PHONY : jarrun
 jarrun:	
 	$(JAVA_PATH)java -jar first_jar.jar
+	
+.PHONY: build_02
+build_02:
+	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  lib/PicachuLayout.java -encoding utf-8 -Xlint:unchecked
+	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  test05/Test05_JFrame.java -encoding utf-8 -Xlint:unchecked
+
+#	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  lib/PicachuLayout.java -encoding utf-8 -Xlint:unchecked	
+#	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  test05/Test05_JFrame.java -encoding utf-8 -Xlint:unchecked
+
+.PHONY: build_03
+build_03:
+	$(JAVA_PATH)javac
 
