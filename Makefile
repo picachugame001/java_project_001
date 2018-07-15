@@ -1,21 +1,23 @@
 
 
 JAVA_PATH = C:\\Program Files\\Java\\jdk1.7.0_80\\bin\\
-SOURCE_PATH = D:\\Workspaces\\Java\\Test01\\
+SOURCE_PATH = D:\\Vinh_WorkSpace\\Test01\\
 CLASS_PATH = $(SOURCE_PATH)bin\\
+DEMO = D:\\Vinh_WorkSpace\\Test01\\
 
 #JAVA_PATH = /usr/lib/jvm/default-java/bin/
-#SOURCE_PATH = /home/picachu/Documents/Wordspaces/java/Test01/
+#SOURCE_PATH = /home/picachu/Documents/Workspace/Test01/
 #CLASS_PATH = $(SOURCE_PATH)bin/
-.DEFAULT_GOAL = build_02
+.DEFAULT_GOAL = build
 
 .PHONY : run
 run: 
-	$(JAVA_PATH)java -cp $(CLASS_PATH)  Test01
+	$(JAVA_PATH)java -cp ./bin -Duser.language=en -Duser.country=US  Test01 
 
+#-J-Duser.language=en
 .PHONY :  build
 build: 
-	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  Test01.java -encoding utf-8 -Xlint:unchecked
+	$(JAVA_PATH)javac -d ./bin -cp .  Test01.java -encoding utf-8 -Xlint:unchecked -J-Duser.language=en
 
 .PHONY : test
 test:
@@ -34,20 +36,24 @@ doc:
 # tao jar file
 .PHONY : jar
 jar:
-	$(JAVA_PATH)jar cvfm first_jar.jar manifes.txt test01 lib test02 test03 test04 Test01.class
+	$(JAVA_PATH)jar cvfm first_jar.jar manifes.txt test01 lib test02 test03 test04 Test01.class test05 image
 .PHONY : jarrun
 jarrun:	
-	$(JAVA_PATH)java -jar first_jar.jar
+	$(JAVA_PATH)java -jar first_jar.jar -Duser.language=en -Duser.country=US
 	
-.PHONY: build_02
-build_02:
-	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  lib/PicachuLayout.java -encoding utf-8 -Xlint:unchecked
-	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  test05/Test05_JFrame.java -encoding utf-8 -Xlint:unchecked
+.PHONY : test01
+test01: ;$(JAVA_PATH)java -Duser.language=en -Duser.country=US
 
-#	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  lib/PicachuLayout.java -encoding utf-8 -Xlint:unchecked	
-#	$(JAVA_PATH)javac -d $(CLASS_PATH) -cp .  test05/Test05_JFrame.java -encoding utf-8 -Xlint:unchecked
+#java -Duser.language=en -Duser.country=US Default
 
-.PHONY: build_03
-build_03:
-	$(JAVA_PATH)javac
+.PHONY :  build002
+build002: 
+		$(JAVA_PATH)javac -d ./bin -cp . lib/file/File_VinhNT.java -encoding utf-8 -Xlint:unchecked -J-Duser.language=en
+	$(JAVA_PATH)javac -d ./bin -cp .  test05/Test05_JFrame.java -encoding utf-8 -Xlint:unchecked -J-Duser.language=en
+
+
+#	$(JAVA_PATH)javac -d ./bin -cp .  test05/Test05_JFrame.java -encoding utf-8 -Xlint:unchecked -J-Duser.language=en
+#	$(JAVA_PATH)javac -d ./bin -cp . lib/layout/PicachuLayout.java -encoding utf-8 -Xlint:unchecked -J-Duser.language=en
+#	$(JAVA_PATH)javac -d ./bin -cp . lib/file/File_VinhNT.java -encoding utf-8 -Xlint:unchecked -J-Duser.language=en
+
 

@@ -5,7 +5,6 @@ import javax.swing.SpringLayout;
 import java.awt.Container;
 import java.awt.BorderLayout;
 import java.awt.Container;
-import lib.SpringUtilities;
 import java.awt.BorderLayout;
 import javax.swing.SpringLayout;
 import java.io.File;

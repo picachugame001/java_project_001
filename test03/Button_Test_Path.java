@@ -13,18 +13,7 @@ extends JButton_VinhNT
         out = out1;
     }
     public void on_Click(){
-        //out.setText("");
         File_VinhNT temp = new File_VinhNT();
-        ClassLoader loader = Button_Test_Path.class.getClassLoader();
-        //out.setText(temp.separator);
-        //try{
-        //    out.setText(loader.getResource("test03/Button_Test_Path.class")
-        //    .getPath());
-        //out.setText("abcd0123");
-        //}
-        //catch(IOException e){
-        //    System.out.println("IOException");
-        //}
         out.setText(File_VinhNT.path_Main);
         
 
